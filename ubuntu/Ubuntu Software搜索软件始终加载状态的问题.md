@@ -6,7 +6,7 @@
 
 ![software-installed](img/software-installed.png)
 
-__解决办法：__安装另外一个`ubuntu软件中心`
+__解决办法一：__安装另外一个`ubuntu软件中心`
 ```bash
 sudo apt-get install software-center
 ```
@@ -14,4 +14,6 @@ sudo apt-get install software-center
 
 ![software-cn](img/software-cn.png)
 
-原因好像是因为16.04版本要废弃`Ubuntu Software`了。
+~~原因好像是因为16.04版本要废弃`Ubuntu Software`了。~~
+
+原因：使用`shadowsocks`需要设置系统全局代理，也就是需要翻墙才能正常使用
