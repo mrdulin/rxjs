@@ -52,5 +52,7 @@ Last login: Thu Jun  2 03:48:18 2016 from 125.98.129.66
 [root@localhost /]# exit
 logout
 Connection to 23.83.246.97 closed.
-dulindeiMac:~ dulin$ 
+dulindeiMac:~ dulin$
 ```
+
+以后如果`root`用户的密码忘了，只要再次进入VPS控制面板重新生成密码就可以了.
