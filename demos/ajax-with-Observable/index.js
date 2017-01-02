@@ -47,3 +47,11 @@ Rx.DOM.get('./contents.json').subscribe(
         console.error(err);
     }
 );
+
+
+//retry
+Rx.DOM.get('www.google.com').retry(5)
+    .subscribe(
+        function onNext(data) { console.log(data.response); },
+        function onError(err) { console.error('Error: ', err); }
+    )
