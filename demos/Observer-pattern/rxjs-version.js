@@ -19,6 +19,7 @@ var elClock = document.getElementById("clock");
 var tickObservable = Rx.Observable.create(function(observer) {
     setInterval(function() {
         //这里观测者observer有三个接口, 就是onNext(data), onError(error), onCompleted()
+        debugger;
         observer.onNext(getTime());
     }, 1000);
 });
