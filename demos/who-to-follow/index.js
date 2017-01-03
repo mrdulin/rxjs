@@ -56,13 +56,13 @@ function init() {
     //     return 'https://api.github.com/users?since=' + randomOffset;
     // }).startWith('https://api.github.com/users');
 
-    var requestStream = refreshClickStream.startWith('startup click').map(function() {
+    var requestStream = refreshClickStream.startWith('click').map(function() {
         var randomOffset = Math.floor(Math.random() * 500);
         return 'https://api.github.com/users?since=' + randomOffset;
     });
 
 
-    responseStream.subscribe(function(res) {
+    requestStream.subscribe(function(res) {
         console.log(res);
     })
 
