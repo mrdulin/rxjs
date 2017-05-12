@@ -16,7 +16,7 @@ var tickObservable = Rx.Observable.create(dataGenerator);
 
 tickObservable.subscribe(
     function(data) { console.log(data); },
-    function (error) { console.log(error); },
+    function (error) { console.error(new Error(error)); },
     function () { console.log('completed'); }
 );
 

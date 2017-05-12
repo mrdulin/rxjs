@@ -6,7 +6,7 @@ root = true
 [*]
 # 每次输入tab会被space代替
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 # 换行符
 end_of_line = lf
