@@ -19,4 +19,3 @@ var subscription = source.subscribe(
         console.log('Done!');
     }
 );
-
