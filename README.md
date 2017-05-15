@@ -1,5 +1,7 @@
 # rxjs-fxxk
 
+`rxjs`- v4文档地址：https://github.com/Reactive-Extensions/RxJS/tree/master/doc
+
 __遇到的问题：__
 
 * `sudo npm i webpack webpack-dev-server -D`，安装这两个包，其他依赖包没有加`sudo`, `OSX`下导致`package.json`是`[RO]`状态，无法进行写操作。
