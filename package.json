@@ -14,8 +14,10 @@
   },
   "devDependencies": {
     "@types/jest": "^20.0.4",
+    "@types/node": "^8.0.14",
     "jest": "^20.0.4",
     "ts-jest": "^20.0.7",
+    "ts-node": "^3.2.0",
     "tslint": "^5.5.0",
     "typescript": "^2.4.1"
   },
@@ -25,10 +27,20 @@
         "skipBabel": true
       }
     },
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx,ts,tsx}",
+      "!**/node_modules/**",
+      "!**/docs/**"
+    ],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/src/demos-rxjs-v5/__tests__/helpers/"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
