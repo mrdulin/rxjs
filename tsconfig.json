@@ -9,6 +9,7 @@
     "baseUrl": ".",
     "allowJs": true,
     "checkJs": true,
+    "outDir": "./compiled/src",
 
     "lib": [
       "es2015",
