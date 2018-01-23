@@ -1,8 +1,7 @@
 {
-  "name": "rxjs-fxxk",
+  "name": "rxjs",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:mrdulin/rxjs-fxxk.git",
   "author": "mrdulin <novaline@qq.com>",
   "license": "MIT",
   "scripts": {

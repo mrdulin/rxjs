@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #infinite-scroller {
+      height: 500px;
+      width: 700px;
+      border: 1px solid #f5ad7c;
+      overflow: scroll;
+      padding: 0;
+
+      li {
+        padding: 10px 5px;
+        line-height: 1.5;
+      }
+
+      li:nth-child(odd) {
+        background: #ffe8d8;
+      }
+      li:nth-child(even) {
+        background: #f5ad7c;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <ul id="infinite-scroller">
+  </ul>
+  <!-- <script src="https://cdn.bootcss.com/rxjs/4.1.0/rx.lite.min.js"></script> -->
+  <!-- <script src="https://cdn.bootcss.com/rxjs-dom/7.0.3/rx.dom.min.js"></script> -->
+  <script src="https://cdn.bootcss.com/rxjs/5.5.6/Rx.min.js"></script>
+  <script src="./helper.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
