@@ -1,4 +1,4 @@
-const Rx = require("rx");
+const Rx = require('rx');
 
 const observable = Rx.Observable.create(function(observer) {
   observer.next(1);
@@ -9,7 +9,7 @@ const observable = Rx.Observable.create(function(observer) {
 
   return function dispose() {
     clearInterval(intervalId);
-  }
+  };
 });
 
 const subscription = observable.subscribe(x => console.log(x));

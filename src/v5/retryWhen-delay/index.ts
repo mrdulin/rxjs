@@ -14,12 +14,14 @@ const delayWithTimes$ = Rx.Observable.of(1, 2, 3)
   .retryWhen(notBeyondTheAttemptCount);
 
 function notBeyondTheAttemptCount(e: any) {
-  return e.scan((errorCount: number, err: Error) => {
-    if (errorCount >= ATTEMPT_COUNT) {
-      throw err;
-    }
-    return errorCount + 1;
-  }, 0).delay(DELAY);
+  return e
+    .scan((errorCount: number, err: Error) => {
+      if (errorCount >= ATTEMPT_COUNT) {
+        throw err;
+      }
+      return errorCount + 1;
+    }, 0)
+    .delay(DELAY);
 }
 
 delayWithTimes$.subscribe(

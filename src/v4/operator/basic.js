@@ -16,38 +16,25 @@ function multiplyByTen(arrNumber) {
       function onComplete() {
         observer.onCompleted();
       }
-    )
+    );
   });
 }
 
-const numsObservable = Rx.Observable.from([1,2,3,4]);
+const numsObservable = Rx.Observable.from([1, 2, 3, 4]);
 
 const resultObservable = multiplyByTen(numsObservable);
 
-resultObservable.subscribe(
-  v => console.log(v),
-  e => console.log(e),
-  () => console.log('completed')
-)
-
+resultObservable.subscribe(v => console.log(v), e => console.log(e), () => console.log('completed'));
 
 //将上述方法定义为rx的操作符
 Rx.Observable.prototype.multiplyByTen = function() {
   //这里的this是FromObservable
   const _this = this;
   return Rx.Observable.create(observer => {
-    _this.subscribe(
-      v => observer.onNext(v * 10),
-      e => observer.onError(e),
-      () => observer.onCompleted()
-    )
+    _this.subscribe(v => observer.onNext(v * 10), e => observer.onError(e), () => observer.onCompleted());
   });
 };
 
-const obs = Rx.Observable.from([1,2,3,4]).multiplyByTen();
+const obs = Rx.Observable.from([1, 2, 3, 4]).multiplyByTen();
 
-obs.subscribe(
-  v => console.log(v),
-  e => console.log(e),
-  () => console.log('completed')
-)
+obs.subscribe(v => console.log(v), e => console.log(e), () => console.log('completed'));

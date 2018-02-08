@@ -24,12 +24,15 @@ const b = Rx.Observable.interval(100).map(i => 'B' + i);
  B6
  */
 
-
 // Rx.Observable.range(1,5).map(x => x * 2).subscribe(logValue);
 
-function logValue(value) { console.log(value); }
+function logValue(value) {
+  console.log(value);
+}
 
-function isEven(val) { return val % 2 === 0; }
+function isEven(val) {
+  return val % 2 === 0;
+}
 
 // Rx.Observable.range(1, 5).filter(isEven).subscribe(logValue);
 
@@ -57,7 +60,7 @@ function isEven(val) { return val % 2 === 0; }
 //     .map(x => x.sum / x.count)
 //     .subscribe(console.log);
 
-const concatAll = source => source.reduce((a, b) => a.concat(b))
+const concatAll = source => source.reduce((a, b) => a.concat(b));
 
 // console.log(concatAll([[1,2,3], [4,5,6], [7, 8, 9]]));
 //[ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
@@ -73,8 +76,8 @@ var counter = Rx.Observable.interval(1000);
 // }, 2000)
 
 var p = new Promise((resolve, reject) => {
-    setTimeout(resolve, 5000);
-})
+  setTimeout(resolve, 5000);
+});
 
 // p.then(() => console.log('Potential side effect!'));
 //
@@ -82,7 +85,7 @@ var p = new Promise((resolve, reject) => {
 // subscription.dispose();
 
 function getJSON(arr) {
-    return Rx.Observable.from(arr).map(JSON.parse);
+  return Rx.Observable.from(arr).map(JSON.parse);
 }
 
 // getJSON([
@@ -101,18 +104,17 @@ function getJSON(arr) {
 //Parsed JSON:  { '1': 1, '2': 2 }
 //Unexpected token s in JSON at position 2
 
-
 var caught = getJSON(['{"1": 1, "2": 2}', '{"1: 1}', '{"enabled": true}']).catch(
-    Rx.Observable.return({
-        error: 'There was an error parsing JSON'
-    })
-)
+  Rx.Observable.return({
+    error: 'There was an error parsing JSON'
+  })
+);
 
 caught.subscribe(
-    function onNext(json) {
-        console.log('Parsed JSON: ', json);
-    },
-    function onError(e) {
-        console.log('Error: ', e.message);
-    }
+  function onNext(json) {
+    console.log('Parsed JSON: ', json);
+  },
+  function onError(e) {
+    console.log('Error: ', e.message);
+  }
 );

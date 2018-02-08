@@ -1,4 +1,4 @@
- const Rx = require('rx');
+const Rx = require('rx');
 
 const obs1 = Rx.Observable.interval(1000);
 const obs2 = Rx.Observable.interval(1000);

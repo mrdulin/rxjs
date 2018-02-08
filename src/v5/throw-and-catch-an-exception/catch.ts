@@ -3,10 +3,7 @@ import * as Rx from 'rxjs';
 const badStream$ = Rx.Observable.throw('crash');
 const goodStream$ = Rx.Observable.of(1, 2, 3);
 
-const merged$ = Rx.Observable.merge(
-  badStream$,
-  goodStream$
-);
+const merged$ = Rx.Observable.merge(badStream$, goodStream$);
 
 merged$.subscribe(
   (data: any) => console.log(data),
@@ -15,10 +12,7 @@ merged$.subscribe(
 );
 
 // ----
-const mergedPatched$ = Rx.Observable.merge(
-  badStream$,
-  goodStream$
-).catch((err: any) => Rx.Observable.of(err));
+const mergedPatched$ = Rx.Observable.merge(badStream$, goodStream$).catch((err: any) => Rx.Observable.of(err));
 
 mergedPatched$.subscribe(
   (data: any) => console.log(data),

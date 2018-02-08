@@ -13,7 +13,6 @@
 //     loadJSONP(QUAKE_URL);
 // })
 
-
 //2. 使用flatMap
 // var quakes = Rx.Observable.create(function(observer) {
 //     window.eqfeed_callback = function(response) {
@@ -36,23 +35,23 @@
 
 //2.x 使用map
 var quakes = Rx.Observable.create(function(observer) {
-    window.eqfeed_callback = function(response) {
-        observer.onNext(response);
-        observer.onCompleted();
-    }
+  window.eqfeed_callback = function(response) {
+    observer.onNext(response);
+    observer.onCompleted();
+  };
 
-    loadJSONP(QUAKE_URL);
+  loadJSONP(QUAKE_URL);
 }).map(function(data) {
-    return Rx.Observable.from(data.features);
-})
+  return Rx.Observable.from(data.features);
+});
 
 quakes.subscribe(function(quakeObservable) {
-    quakeObservable.subscribe(function(quake) {
-        var coords = quake.geometry.coordinates;
-        var size = quake.properties.mag * 10000;
-        console.log(coords, size);
-        L.circle([coords[1], coords[0], size]).addTo(map);
-    });
+  quakeObservable.subscribe(function(quake) {
+    var coords = quake.geometry.coordinates;
+    var size = quake.properties.mag * 10000;
+    console.log(coords, size);
+    L.circle([coords[1], coords[0], size]).addTo(map);
+  });
 });
 
 //3. 使用Rx.DOM
@@ -78,7 +77,6 @@ quakes.subscribe(function(quakeObservable) {
 // step3.subscribe(function onNext(quake) {
 //     L.circle([quake.lat, quake.lng], quake.size).addTo(map);
 // })
-
 
 //4. 实时的
 // var quakes = Rx.Observable.interval(5000)
