@@ -8,11 +8,11 @@ const add = (x: number, y: number): number => x + y;
 Rx.Observable.from([
   {
     date: '2016-07-01',
-    amount: -320.00
+    amount: -320.0
   },
   {
     date: '2016-07-13',
-    amount: 1000.00
+    amount: 1000.0
   },
   {
     date: '2016-07-22',
@@ -22,7 +22,6 @@ Rx.Observable.from([
   .pluck('amount')
   .reduce(add, 0)
   .subscribe(console.log);
-
 
 // 2
 const candidates: any[] = [
@@ -43,7 +42,6 @@ Rx.Observable.from(candidates)
     return acc;
   }, [])
   .subscribe(console.log);
-
 
 // scan，和reduce类似，都是对Observable发出的每一个值执行累加器，不同的是，scan会发出每一次累加的中间值。
 
