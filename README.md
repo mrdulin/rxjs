@@ -1,1 +1,1 @@
-# rxjs-playground
+# rxjs-samples
